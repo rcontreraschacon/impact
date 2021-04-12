@@ -24,7 +24,7 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<string> List([FromQuery] string feed)
+        public async Task<ActionResult<string>> List([FromQuery] string feed)
         {
             return await _mediator.Send(new List.Query { Url = feed });
         }
